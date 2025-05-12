@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- jQuery Mobile + EmailJS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div data-role="page" id="contact-page">
+
+  <div data-role="header" class="header" data-theme="b">
+    <a href="../html/home.html" data-role="button" data-icon="arrow-l" data-iconpos="notext" class="ui-btn-left" data-ajax="false">Back</a>
+    <h1>Contact Us</h1>
+  </div>
+
+  <div role="main" class="ui-content full-page-content">
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" name="from_name" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="reply_to" id="email" required>
+
+      <label for="message">Message:</label>
+      <textarea name="message" id="message" required></textarea>
+
+      <input class="btn-primary" type="submit" value="Send Email" data-role="button" data-theme="a">
+
+    </form>
+  </div>
+
+  <div data-role="footer" data-theme="b" class="footer-fixed">
+    <h4>© 2025 LanguageApp </h4>
+  </div>
+
+</div>
+
+</body>
+</html>

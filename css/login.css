@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #6E45E2; /* Purple */
+    --text-color: #ffffff; /* White */
+    --border-color: #6E45E2; /* Matches primary */
+    --heading-color: #5b38bc; /* Darker Purple */
+    --paragraph-color: #444444; /* Neutral gray */
+    --error-color: #cc0000;
+  }
+  
+  .login-page {
+    background-color: #ffffff;
+    height: 100vh;
+  }
+  
+  .login-content {
+    padding: 30px 20px;
+  }
+  
+  .app-name {
+    text-align: center;
+    color: var(--heading-color);
+    margin: 30px 0 20px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    /* margin-bottom: 15px; */
+    padding: 1rem;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .switch-auth {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .switch-auth a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

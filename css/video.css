@@ -1,0 +1,15 @@
+#video-description{
+    width: 100%;
+    text-align: center;
+}
+
+#video-player iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintains 16:9 ratio */
+    border: none;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  

@@ -1,0 +1,107 @@
+/* Custom Colors */
+:root {
+    --primary-color: #6E45E2;
+    /* Purple */
+    --text-color: #ffffff;
+    /* White */
+    --border-color: #6E45E2;
+    /* Matches primary */
+    --heading-color: #5b38bc;
+    /* Darker Purple */
+    --paragraph-color: #444444;
+    /* Neutral gray */
+
+    --accent-color: #ff9800;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+    --text-dark: #333333;
+}
+
+body {
+    background-color: var(--white);
+}
+
+.custom-container {
+    padding: 1.5rem;
+    background-color: var(--white);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.custom-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.custom-header-title {
+    font-size: 1.3rem;
+}
+
+.custom-back-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: none;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-top: 2rem;
+}
+
+.confirmation-msg {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.custom-btn {
+    background-color: var(--accent-color) !important;
+    color: var(--white) !important;
+    border: none;
+    font-weight: bold;
+}
+
+.plan-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--heading-color);
+}
+
+.plan-card {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--bg-light);
+}
+
+.plan-card h3 {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.plan-card ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.plan-card .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+}
+
+.subscribe-btn {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: bold;
+    border: none;
+}

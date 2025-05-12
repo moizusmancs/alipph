@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery & jQuery Mobile -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+<div data-role="page" id="home" class="home-page">
+
+  <!-- Header -->
+  <div data-role="header" class="header" data-theme="b" style="padding: 0;">
+    <div class="header-inner">
+      <select id="language-select" data-mini="true">
+        <option value="english" selected>English</option>
+        <option value="arabic">Arabic</option>
+        <option value="german">German</option>
+      </select>
+      <a href="../html/login.html" id="profile-btn" class="btn-secondary-2" data-role="button">Logout</a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div role="main" class="ui-content custom-container">
+
+    <div class="user-info">
+      <p><strong>Hello, </strong></p>
+      <p>Continue language sessions in <span id="selected-language">English</span></p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-section">
+      <input type="text" id="lesson-search" placeholder="Search lesson..." data-mini="true">
+    </div>
+
+    <!-- Video Section -->
+    <h1>Video Content</h1>
+    <div class="video-card" id="video-access-card">
+      <div class="premium-chip">Premium</div>
+      <p>Watch & Learn <span id="video-language-label">English</span> with video</p>
+    </div>
+
+    <!-- Lessons Section -->
+    <h1>All Lessons</h1>
+    <div class="lessons-section" id="lessons-container">
+      <!-- Lesson cards will be dynamically rendered here -->
+    </div>
+
+  </div>
+
+  <!-- Optional Footer -->
+  <div data-role="footer" class="footer" data-theme="b">
+    <h4>© 2025 LanguageApp - <a style="color: white;" href="../html/contact.html" data-ajax="false">Contact Us</a></h4>
+  </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<script src="../js/home.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/quiz.engine.js"></script>
+
+</body>
+</html>

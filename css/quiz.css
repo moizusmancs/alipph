@@ -1,0 +1,33 @@
+.question-container {
+    padding: 15px;
+  }
+  .answer-choice {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .answer-choice.selected {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .results-screen {
+    text-align: center;
+    padding: 20px;
+  }
+
+.question-container>h2{
+    margin-bottom: 1rem;
+}
+
+.results-screen{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

@@ -1,0 +1,38 @@
+:root {
+    --primary-color: #6E45E2; /* Purple */
+    --text-color: #ffffff; /* White */
+    --border-color: #6E45E2; /* Matches primary */
+    --heading-color: #5b38bc; /* Darker Purple */
+    --paragraph-color: #444444; /* Neutral gray */
+    --error-color: #cc0000;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+    margin-bottom: 15px;
+    border-radius: 50px !important;
+}
+
+.btn-secondary {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--border-color) !important;
+    font-weight: bold;
+    border-radius: 50px !important;
+}
+
+.btn-secondary-2 {
+    color: #fff !important;
+    border: 2px solid var(--border-color) !important;
+    font-weight: bold;
+    border-radius: 50px !important;
+    border: 1px solid white !important;
+    padding: 0.5rem 1rem;
+}
+
+.header{
+    height: 3rem;
+    background-color: #6E45E2 !important;
+}

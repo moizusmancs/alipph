@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #6E45E2; /* Purple */
+    --text-color: #ffffff; /* White */
+    --border-color: #6E45E2; /* Matches primary */
+    --heading-color: #5b38bc; /* Darker Purple */
+    --paragraph-color: #444444; /* Neutral gray */
+}
+
+.landing-page {
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 0;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.landing-content {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.landing-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+.app-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--heading-color);
+    margin: 15px 0 10px;
+}
+
+.app-description {
+    font-size: 1em;
+    color: var(--paragraph-color);
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+

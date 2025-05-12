@@ -1,0 +1,40 @@
+/* Make main content stretch full screen */
+.header{
+    height: 3rem;
+    background-color: #6E45E2 !important;
+}
+
+.full-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Full width form and larger UI */
+  #contact-form {
+    width: 100%;
+  }
+  
+  #contact-form label {
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 1.1em;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Fix footer to bottom */
+  .footer-fixed {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #6E45E2;
+  }
+  

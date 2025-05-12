@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Premium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery Mobile -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/premiuim.css">
+</head>
+<body>
+
+<div data-role="page" id="premium-page" class="premium-page">
+
+<!-- Header with Back Button -->
+<div data-role="header" class="custom-header" data-position="fixed" data-theme="a">
+  <a href="#" data-role="button" 
+          data-icon="arrow-l" 
+          data-iconpos="notext" 
+          class="back-btn ui-btn-left"
+          data-ajax="false"
+          onclick="history.back()">Back</a>
+</div>
+
+
+  <!-- Main Content -->
+<div role="main" class="ui-content custom-container">
+  <h2 class="plan-heading">Choose Your Plan</h2>
+  
+  <!-- Plans -->
+  <div id="plans-container">
+
+    <!-- Basic Plan -->
+    <div class="plan-card" data-plan="basic">
+      <h3>Basic Plan</h3>
+      <ul>
+        <li>Access to limited quizzes</li>
+        <li>No video content</li>
+      </ul>
+      <p class="price">Free</p>
+      <a href="#" class="ui-btn subscribe-btn" data-plan="basic">Subscribed</a>
+    </div>
+
+    <!-- Standard Plan -->
+    <div class="plan-card" data-plan="standard">
+      <h3>Standard Plan</h3>
+      <ul>
+        <li>Access to all quizzes</li>
+        <li>No video content</li>
+      </ul>
+      <p class="price">$4.99/month</p>
+      <a href="#" class="ui-btn subscribe-btn" data-plan="standard">Buy Now</a>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="plan-card" data-plan="premium">
+      <h3>Premium Plan</h3>
+      <ul>
+        <li>Access to all quizzes</li>
+        <li>Access to video content</li>
+      </ul>
+      <p class="price">$9.99/month</p>
+      <a href="#" class="ui-btn subscribe-btn" data-plan="premium">Buy Now</a>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<!-- Script -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="../js/premium.js"></script>
+
+</body>
+</html>
