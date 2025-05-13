@@ -2,7 +2,7 @@ const VIDEO_DATA = {
     english: [
       {
         title: "Learn Basic English in less than 3 hours",
-        url: "https://www.youtube.com/embed/1VSt_KbDDQg?si=k_Fygz_r-4kjNYPt", // embed URLs
+        url: "https://www.youtube.com/embed/1VSt_KbDDQg?si=k_Fygz_r-4kjNYPt", 
         access: "premium"
       }
     ],
@@ -25,16 +25,15 @@ const VIDEO_DATA = {
   
   $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const lang = urlParams.get('lang') || 'english';
+    const lang = localStorage.getItem("selectedLanguage") || "english";
+
   
-    // Capitalize first letter
     $('#video-language').text(lang.charAt(0).toUpperCase() + lang.slice(1));
   
-    // Get the video data
     const videos = VIDEO_DATA[lang];
   
     if (videos && videos.length > 0) {
-      const video = videos[0]; // You can later allow multiple if needed
+      const video = videos[0]; 
   
       $('#video-player').html(`
         <iframe width="560" height="315" src=${video.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

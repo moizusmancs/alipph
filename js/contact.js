@@ -1,5 +1,4 @@
-// Initialize EmailJS with your user ID
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+emailjs.init("Key"); 
 
 $(document).on("pagecreate", "#contact-page", function () {
   $("#contact-form").on("submit", function (e) {

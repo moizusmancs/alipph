@@ -10,25 +10,21 @@
 </head>
 <body>
 
-<!-- Quiz Page Structure -->
 <div data-role="page" id="quiz-page">
   <div data-role="header" class="main-header" data-theme="a">
     <h1>Quiz</h1>
   </div>
 
   <div role="main" class="ui-content">
-    <!-- Question Pages will be inserted here dynamically -->
     <div id="quiz-container"></div>
   </div>
 </div>
 
-<!-- Question Template (Hidden) -->
 <div id="question-template" style="display:none;">
   <div data-role="page" class="question-page" data-question-id="{id}">
     <div class="question-container">
       <h2>{question}</h2>
       <form class="answer-form">
-        <!-- Answer choices will be inserted here -->
       </form>
       <div class="nav-buttons">
         <a href="#" class="ui-btn ui-corner-all ui-shadow prev-btn" data-theme="a">Previous</a>
@@ -38,7 +34,6 @@
   </div>
 </div>
 
-<!-- Results Template (Hidden) -->
 <div id="results-template" style="display:none;">
   <div data-role="page" class="results-page">
     <div class="results-screen">
@@ -55,200 +50,5 @@
 <script src="../js/config.js"></script>
 <script src="../js/quiz.engine.js"></script>
 <script src="../js/quiz-ui.js"></script>
-<!-- 
-<script>
-// Quiz Data
-const QUIZ_DATA = {
-  greetings: [
-    {
-      question: "How do you say 'Hello' in French?",
-      answers: [
-        { text: "Bonjour", correct: true },
-        { text: "Au revoir", correct: false },
-        { text: "Merci", correct: false },
-        { text: "Oui", correct: false }
-      ]
-    },
-    {
-      question: "What does 'Bonsoir' mean?",
-      answers: [
-        { text: "Good morning", correct: false },
-        { text: "Good evening", correct: true },
-        { text: "Goodbye", correct: false },
-        { text: "Thank you", correct: false }
-      ]
-    },
-    {
-      question: "How would you respond to 'Comment ça va?'",
-      answers: [
-        { text: "Ça va bien", correct: true },
-        { text: "Au revoir", correct: false },
-        { text: "Merci beaucoup", correct: false },
-        { text: "Je m'appelle...", correct: false }
-      ]
-    }
-  ],
-  food: [
-    {
-      question: "How do you say 'Apple' in French?",
-      answers: [
-        { text: "Banane", correct: false },
-        { text: "Pomme", correct: true },
-        { text: "Fromage", correct: false },
-        { text: "Pain", correct: false }
-      ]
-    }
-    // Add more food questions here
-  ]
-};
-
-// Quiz State
-let currentLesson = 'greetings';
-let currentQuestion = 0;
-let userAnswers = [];
-let score = 0;
-
-$(document).on("pagecreate", "#quiz-page", function() {
-  // Initialize the quiz
-  initializeQuiz();
-  
-  // Handle navigation buttons
-  $(document).on("click", ".next-btn", function(e) {
-    e.preventDefault();
-    saveAnswer();
-    navigateToQuestion(currentQuestion + 1);
-  });
-  
-  $(document).on("click", ".prev-btn", function(e) {
-    e.preventDefault();
-    saveAnswer();
-    navigateToQuestion(currentQuestion - 1);
-  });
-  
-  // Handle answer selection
-  $(document).on("click", ".answer-choice", function() {
-    $(this).siblings().removeClass("selected");
-    $(this).addClass("selected");
-  });
-});
-
-function initializeQuiz() {
-  // Get lesson from URL hash (e.g., #greetings)
-  const hash = window.location.hash.substring(1);
-  if (QUIZ_DATA[hash]) {
-    currentLesson = hash;
-  }
-  
-  // Clear previous state
-  $("#quiz-container").empty();
-  userAnswers = [];
-  score = 0;
-  currentQuestion = 0;
-  
-  // Create question pages
-  const questions = QUIZ_DATA[currentLesson];
-  questions.forEach((q, index) => {
-    const questionHtml = $("#question-template").html()
-      .replace(/{id}/g, index)
-      .replace(/{question}/, q.question);
-    
-    const $questionPage = $(questionHtml);
-    const $form = $questionPage.find(".answer-form");
-    
-    // Add answer choices
-    q.answers.forEach((a, i) => {
-      $form.append(`
-        <label class="answer-choice">
-          <input type="radio" name="answer" value="${i}" ${userAnswers[index] === i ? 'checked' : ''}>
-          ${a.text}
-        </label>
-      `);
-    });
-    
-    // Disable prev button on first question
-    if (index === 0) {
-      $questionPage.find(".prev-btn").addClass("ui-disabled");
-    }
-    
-    // Change next button to submit on last question
-    if (index === questions.length - 1) {
-      $questionPage.find(".next-btn").text("Submit");
-    }
-    
-    $("#quiz-container").append($questionPage);
-  });
-  
-  // Show first question
-  navigateToQuestion(0);
-}
-
-function navigateToQuestion(index) {
-  const questions = QUIZ_DATA[currentLesson];
-  
-  // If submitting last question
-  if (index >= questions.length) {
-    calculateScore();
-    showResults();
-    return;
-  }
-  
-  // Validate index
-  if (index < 0) index = 0;
-  if (index >= questions.length) index = questions.length - 1;
-  
-  currentQuestion = index;
-  
-  // Hide all questions
-  $(".question-page").hide();
-  
-  // Show current question
-  $(`.question-page[data-question-id="${index}"]`).show();
-  
-  // Update button states
-  if (index === 0) {
-    $(".prev-btn").addClass("ui-disabled");
-  } else {
-    $(".prev-btn").removeClass("ui-disabled");
-  }
-  
-  if (index === questions.length - 1) {
-    $(".next-btn").text("Submit");
-  } else {
-    $(".next-btn").text("Next");
-  }
-}
-
-function saveAnswer() {
-  const selected = $(`.question-page[data-question-id="${currentQuestion}"] .answer-choice.selected`);
-  if (selected.length) {
-    const answerIndex = parseInt(selected.find("input").val());
-    userAnswers[currentQuestion] = answerIndex;
-  }
-}
-
-function calculateScore() {
-  const questions = QUIZ_DATA[currentLesson];
-  score = 0;
-  
-  questions.forEach((q, index) => {
-    if (userAnswers[index] !== undefined) {
-      if (q.answers[userAnswers[index]].correct) {
-        score++;
-      }
-    }
-  });
-}
-
-function showResults() {
-  const questions = QUIZ_DATA[currentLesson];
-  const resultsHtml = $("#results-template").html()
-    .replace(/{score}/, score)
-    .replace(/{total}/, questions.length);
-  
-  $("#quiz-container").append(resultsHtml);
-  $(".question-page").hide();
-  $(".results-page").show();
-}
-</script> -->
 </body>
 </html>

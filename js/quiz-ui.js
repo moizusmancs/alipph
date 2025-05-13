@@ -1,12 +1,10 @@
 $(document).on("pagecreate", "#quiz-page", function() {
-    // Initialize from session
     const language = localStorage.getItem('selectedLanguage') || 'english';
     const category = localStorage.getItem('selectedCategory') || 'greetings';
     quizEngine.init(language, category);
   
     renderQuestion();    
     
-    // Event handlers
     $(document).on("click", ".next-btn ", goToNextQuestion);
     $(document).on("click", ".prev-btn", goToPreviousQuestion);
   });
@@ -23,7 +21,6 @@ $(document).on("pagecreate", "#quiz-page", function() {
     quizEngine.init(language, category);
     renderQuestion();
     
-    // Update header title with selected category
     $("#quiz-header h1").text(category.charAt(0).toUpperCase() + category.slice(1) + " Quiz");
     
   }

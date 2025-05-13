@@ -1,16 +1,13 @@
 $(document).on("pagecreate", "#premium-page", function () {
     const user = JSON.parse(localStorage.getItem("user")) || {};
   
-    // Default to 'basic' if not set
     if (!user.premium) {
       user.premium = "basic";
       localStorage.setItem("user", JSON.stringify(user));
     }
   
-    // Show username
     $("#username").text(user.name || "User");
   
-    // Update UI based on current subscription
     function updateButtons() {
       $(".subscribe-btn").each(function () {
         const plan = $(this).data("plan");
@@ -24,7 +21,6 @@ $(document).on("pagecreate", "#premium-page", function () {
   
     updateButtons();
   
-    // Handle subscription click
     $(".subscribe-btn").on("click", function (e) {
       e.preventDefault();
   

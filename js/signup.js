@@ -9,7 +9,6 @@ $(document).on("pagecreate", "#signup", function () {
         return;
       }
   
-      // Create user object
       const newUser = {
         name: fullname,
         premium: false,
@@ -17,13 +16,10 @@ $(document).on("pagecreate", "#signup", function () {
         password: password
       };
   
-      // Get existing users from localStorage
       const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
   
-      // Append the new user
       existingUsers.push(newUser);
   
-      // Save back to localStorage
       localStorage.setItem('users', JSON.stringify(existingUsers));
 
       localStorage.setItem('user', JSON.stringify({
@@ -31,7 +27,6 @@ $(document).on("pagecreate", "#signup", function () {
         premium: newUser.premium
       }));
   
-      // Redirect to home
       window.location.href = '../html/home.html';
     });
   });
